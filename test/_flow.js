@@ -1,13 +1,13 @@
 // @flow
-import chalk from '..';
+const chalk = require('../lib');
 
 // $ExpectError (Can't have typo in option name)
-chalk.constructor({levl: 1});
-chalk.constructor({level: 1});
+chalk.constructor({ levl: 1 });
+chalk.constructor({ level: 1 });
 
 // $ExpectError (Option must have proper type)
-new chalk.constructor({enabled: 'true'});
-new chalk.constructor({enabled: true});
+new chalk.constructor({ enabled: 'true' });
+new chalk.constructor({ enabled: true });
 
 // $ExpectError (Can't pass in null)
 chalk.underline(null);
@@ -26,8 +26,8 @@ chalk.red.bgBlu.underline('foo');
 chalk.red.bgBlue.underline('foo');
 
 // $ExpectError (Level must be 0, 1, 2, or 3)
-const badCtx = chalk.constructor({level: 4});
-const ctx = chalk.constructor({level: 3});
+const badCtx = chalk.constructor({ level: 4 });
+const ctx = chalk.constructor({ level: 3 });
 
 // $ExpectError (Can't pass in null)
 ctx(null);

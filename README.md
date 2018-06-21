@@ -1,10 +1,10 @@
 <h1 align="center">
-	<br>
-	<br>
-	<img width="320" src="media/logo.svg" alt="Chalk">
-	<br>
-	<br>
-	<br>
+  <br>
+  <br>
+  <img width="320" src="media/logo.svg" alt="Chalk">
+  <br>
+  <br>
+  <br>
 </h1>
 
 > Terminal string styling done right
@@ -18,25 +18,25 @@
 
 ## Highlights
 
-- Expressive API
-- Highly performant
-- Ability to nest styles
-- [256/Truecolor color support](#256-and-truecolor-color-support)
-- Auto-detects color support
-- Doesn't extend `String.prototype`
-- Clean and focused
-- Actively maintained
-- [Used by ~23,000 packages](https://www.npmjs.com/browse/depended/chalk) as of December 31, 2017
+* Expressive API
+* Highly performant
+* Ability to nest styles
+* [256/Truecolor color support](#256-and-truecolor-color-support)
+* Auto-detects color support
+* Doesn't extend `String.prototype`
+* Clean and focused
+* Actively maintained
+* [Used by ~23,000 packages](https://www.npmjs.com/browse/depended/chalk) as of December 31, 2017
 
 
 ## Install
 
-```console
-$ npm install chalk
+```sh
+npm install chalk
 ```
 
 <a href="https://www.patreon.com/sindresorhus">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
 
 
@@ -68,9 +68,9 @@ log(chalk.red('Hello', chalk.underline.bgBlue('world') + '!'));
 
 // Nest styles of the same type even (color, underline, background)
 log(chalk.green(
-	'I am a green line ' +
-	chalk.blue.underline.bold('with a blue substring') +
-	' that becomes green again!'
+  'I am a green line ' +
+  chalk.blue.underline.bold('with a blue substring') +
+  ' that becomes green again!'
 ));
 
 // ES2015 template literal
@@ -148,10 +148,10 @@ const ctx = new chalk.constructor({level: 0});
 
 Levels are as follows:
 
-0. All colors disabled
-1. Basic color support (16 colors)
-2. 256 color support
-3. Truecolor support (16 million colors)
+* **0** - All colors disabled
+* **1** - Basic color support (16 colors)
+* **2** - 256 color support
+* **3** - Truecolor support (16 million colors)
 
 ### chalk.supportsColor
 
@@ -166,53 +166,53 @@ Explicit 256/Truecolor mode can be enabled using the `--color=256` and `--color=
 
 ### Modifiers
 
-- `reset`
-- `bold`
-- `dim`
-- `italic` *(Not widely supported)*
-- `underline`
-- `inverse`
-- `hidden`
-- `strikethrough` *(Not widely supported)*
-- `visible` (Text is emitted only if enabled)
+* `reset`
+* `bold`
+* `dim`
+* `italic` _(Not widely supported)_
+* `underline`
+* `inverse`
+* `hidden`
+* `strikethrough` _(Not widely supported)_
+* `visible` (Text is emitted only if enabled)
 
 ### Colors
 
-- `black`
-- `red`
-- `green`
-- `yellow`
-- `blue` *(On Windows the bright version is used since normal blue is illegible)*
-- `magenta`
-- `cyan`
-- `white`
-- `gray` ("bright black")
-- `redBright`
-- `greenBright`
-- `yellowBright`
-- `blueBright`
-- `magentaBright`
-- `cyanBright`
-- `whiteBright`
+* `black`
+* `red`
+* `green`
+* `yellow`
+* `blue` _(On Windows the bright version is used since normal blue is illegible)_
+* `magenta`
+* `cyan`
+* `white`
+* `gray` ("bright black")
+* `redBright`
+* `greenBright`
+* `yellowBright`
+* `blueBright`
+* `magentaBright`
+* `cyanBright`
+* `whiteBright`
 
 ### Background colors
 
-- `bgBlack`
-- `bgRed`
-- `bgGreen`
-- `bgYellow`
-- `bgBlue`
-- `bgMagenta`
-- `bgCyan`
-- `bgWhite`
-- `bgBlackBright`
-- `bgRedBright`
-- `bgGreenBright`
-- `bgYellowBright`
-- `bgBlueBright`
-- `bgMagentaBright`
-- `bgCyanBright`
-- `bgWhiteBright`
+* `bgBlack`
+* `bgRed`
+* `bgGreen`
+* `bgYellow`
+* `bgBlue`
+* `bgMagenta`
+* `bgCyan`
+* `bgWhite`
+* `bgBlackBright`
+* `bgRedBright`
+* `bgGreenBright`
+* `bgYellowBright`
+* `bgBlueBright`
+* `bgMagentaBright`
+* `bgCyanBright`
+* `bgWhiteBright`
 
 
 ## Tagged template literal
@@ -242,7 +242,7 @@ console.log(chalk`{bold.rgb(10,100,200) Hello!}`);
 
 Note that function styles (`rgb()`, `hsl()`, `keyword()`, etc.) may not contain spaces between parameters.
 
-All interpolated values (`` chalk`${foo}` ``) are converted to strings via the `.toString()` method. All curly braces (`{` and `}`) in interpolated value strings are escaped.
+All interpolated values (``chalk`${foo}` ``) are converted to strings via the `.toString()` method. All curly braces (`{` and `}`) in interpolated value strings are escaped.
 
 
 ## 256 and Truecolor color support
@@ -253,26 +253,26 @@ Colors are downsampled from 16 million RGB values to an ANSI color format that i
 
 Examples:
 
-- `chalk.hex('#DEADED').underline('Hello, world!')`
-- `chalk.keyword('orange')('Some orange text')`
-- `chalk.rgb(15, 100, 204).inverse('Hello!')`
+* `chalk.hex('#DEADED').underline('Hello, world!')`
+* `chalk.keyword('orange')('Some orange text')`
+* `chalk.rgb(15, 100, 204).inverse('Hello!')`
 
 Background versions of these models are prefixed with `bg` and the first level of the module capitalized (e.g. `keyword` for foreground colors and `bgKeyword` for background colors).
 
-- `chalk.bgHex('#DEADED').underline('Hello, world!')`
-- `chalk.bgKeyword('orange')('Some orange text')`
-- `chalk.bgRgb(15, 100, 204).inverse('Hello!')`
+* `chalk.bgHex('#DEADED').underline('Hello, world!')`
+* `chalk.bgKeyword('orange')('Some orange text')`
+* `chalk.bgRgb(15, 100, 204).inverse('Hello!')`
 
 The following color models can be used:
 
-- [`rgb`](https://en.wikipedia.org/wiki/RGB_color_model) - Example: `chalk.rgb(255, 136, 0).bold('Orange!')`
-- [`hex`](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet) - Example: `chalk.hex('#FF8800').bold('Orange!')`
-- [`keyword`](https://www.w3.org/wiki/CSS/Properties/color/keywords) (CSS keywords) - Example: `chalk.keyword('orange').bold('Orange!')`
-- [`hsl`](https://en.wikipedia.org/wiki/HSL_and_HSV) - Example: `chalk.hsl(32, 100, 50).bold('Orange!')`
-- [`hsv`](https://en.wikipedia.org/wiki/HSL_and_HSV) - Example: `chalk.hsv(32, 100, 100).bold('Orange!')`
-- [`hwb`](https://en.wikipedia.org/wiki/HWB_color_model)  - Example: `chalk.hwb(32, 0, 50).bold('Orange!')`
-- `ansi16`
-- `ansi256`
+* [`rgb`](https://en.wikipedia.org/wiki/RGB_color_model) - Example: `chalk.rgb(255, 136, 0).bold('Orange!')`
+* [`hex`](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet) - Example: `chalk.hex('#FF8800').bold('Orange!')`
+* [`keyword`](https://www.w3.org/wiki/CSS/Properties/color/keywords) (CSS keywords) - Example: `chalk.keyword('orange').bold('Orange!')`
+* [`hsl`](https://en.wikipedia.org/wiki/HSL_and_HSV) - Example: `chalk.hsl(32, 100, 50).bold('Orange!')`
+* [`hsv`](https://en.wikipedia.org/wiki/HSL_and_HSV) - Example: `chalk.hsv(32, 100, 100).bold('Orange!')`
+* [`hwb`](https://en.wikipedia.org/wiki/HWB_color_model)  - Example: `chalk.hwb(32, 0, 50).bold('Orange!')`
+* `ansi16`
+* `ansi256`
 
 
 ## Windows
@@ -287,28 +287,28 @@ If you're on Windows, do yourself a favor and use [`cmder`](http://cmder.net/) i
 
 ## Related
 
-- [chalk-cli](https://github.com/chalk/chalk-cli) - CLI for this module
-- [ansi-styles](https://github.com/chalk/ansi-styles) - ANSI escape codes for styling strings in the terminal
-- [supports-color](https://github.com/chalk/supports-color) - Detect whether a terminal supports color
-- [strip-ansi](https://github.com/chalk/strip-ansi) - Strip ANSI escape codes
-- [strip-ansi-stream](https://github.com/chalk/strip-ansi-stream) - Strip ANSI escape codes from a stream
-- [has-ansi](https://github.com/chalk/has-ansi) - Check if a string has ANSI escape codes
-- [ansi-regex](https://github.com/chalk/ansi-regex) - Regular expression for matching ANSI escape codes
-- [wrap-ansi](https://github.com/chalk/wrap-ansi) - Wordwrap a string with ANSI escape codes
-- [slice-ansi](https://github.com/chalk/slice-ansi) - Slice a string with ANSI escape codes
-- [color-convert](https://github.com/qix-/color-convert) - Converts colors between different models
-- [chalk-animation](https://github.com/bokub/chalk-animation) - Animate strings in the terminal
-- [gradient-string](https://github.com/bokub/gradient-string) - Apply color gradients to strings
-- [chalk-pipe](https://github.com/LitoMore/chalk-pipe) - Create chalk style schemes with simpler style strings
-- [terminal-link](https://github.com/sindresorhus/terminal-link) - Create clickable links in the terminal
+* [chalk-cli](https://github.com/chalk/chalk-cli) - CLI for this module
+* [ansi-styles](https://github.com/chalk/ansi-styles) - ANSI escape codes for styling strings in the terminal
+* [supports-color](https://github.com/chalk/supports-color) - Detect whether a terminal supports color
+* [strip-ansi](https://github.com/chalk/strip-ansi) - Strip ANSI escape codes
+* [strip-ansi-stream](https://github.com/chalk/strip-ansi-stream) - Strip ANSI escape codes from a stream
+* [has-ansi](https://github.com/chalk/has-ansi) - Check if a string has ANSI escape codes
+* [ansi-regex](https://github.com/chalk/ansi-regex) - Regular expression for matching ANSI escape codes
+* [wrap-ansi](https://github.com/chalk/wrap-ansi) - Wordwrap a string with ANSI escape codes
+* [slice-ansi](https://github.com/chalk/slice-ansi) - Slice a string with ANSI escape codes
+* [color-convert](https://github.com/qix-/color-convert) - Converts colors between different models
+* [chalk-animation](https://github.com/bokub/chalk-animation) - Animate strings in the terminal
+* [gradient-string](https://github.com/bokub/gradient-string) - Apply color gradients to strings
+* [chalk-pipe](https://github.com/LitoMore/chalk-pipe) - Create chalk style schemes with simpler style strings
+* [terminal-link](https://github.com/sindresorhus/terminal-link) - Create clickable links in the terminal
 
 
 ## Maintainers
 
-- [Sindre Sorhus](https://github.com/sindresorhus)
-- [Josh Junon](https://github.com/qix-)
+* [Sindre Sorhus](https://github.com/sindresorhus)
+* [Josh Junon](https://github.com/qix-)
 
 
 ## License
 
-MIT
+[MIT](LICENSE) © [Sindre Sorhus](http://sindresorhus.com)

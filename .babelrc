@@ -1,0 +1,14 @@
+{
+  "presets": [
+    ["@babel/env", {
+      "targets": {
+        "node": "4"
+      }
+    }],
+    "@babel/es2015"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-template-literals"
+  ],
+  "sourceMaps": "inline"
+}

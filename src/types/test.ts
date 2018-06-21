@@ -1,4 +1,4 @@
-import chalk, {Level} from '..';
+import chalk, { Level } from '..';
 
 chalk.underline('foo');
 chalk.red('foo');
@@ -16,8 +16,8 @@ chalk.underline.red.bgGreen('foo');
 
 chalk.grey('foo');
 
-chalk.constructor({level: 1});
-const ctx = chalk.constructor({level: Level.TrueColor });
+chalk.constructor({ level: 1 });
+const ctx = chalk.constructor({ level: Level.TrueColor });
 ctx('foo');
 ctx.red('foo');
 ctx`foo`;

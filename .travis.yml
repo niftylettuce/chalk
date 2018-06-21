@@ -3,4 +3,7 @@ node_js:
   - '8'
   - '6'
   - '4'
-after_success: npm run coveralls
+script:
+  npm run test-coverage
+after_success:
+  npm run coverage
