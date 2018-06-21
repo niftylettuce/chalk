@@ -8,7 +8,6 @@
     "url": "sindresorhus.com"
   },
   "dependencies": {
-    "ansi-html": "^0.0.7",
     "ansi-styles": "https://github.com/niftylettuce/ansi-styles",
     "escape-string-regexp": "^1.0.5",
     "supports-color": "^5.4.0"
@@ -112,6 +111,7 @@
       "browser"
     ],
     "ignores": [
+      "lib",
       "test/_flow.js"
     ],
     "rules": {
@@ -134,11 +134,7 @@
       "camelcase": "off",
       "no-warning-comments": "off"
     },
-    "space": true,
-    "ignores": [
-      "lib",
-      "test/_flow.js"
-    ]
+    "space": true
   },
   "ava": {
     "require": [

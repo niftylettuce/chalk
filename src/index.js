@@ -1,6 +1,5 @@
 const escapeStringRegexp = require('escape-string-regexp');
 const ansiStyles = require('ansi-styles');
-const ansiHTML = require('ansi-html');
 let stdoutColor = require('supports-color').stdout;
 
 // determine if we're in a browser
@@ -8,8 +7,15 @@ const isBrowser =
   typeof window !== 'undefined' && typeof window.document !== 'undefined';
 
 // if we're in a browser then we DO support colors
-// because we use ansi-html to convert in `console.log`
-if (isBrowser) stdoutColor = true;
+// but we need to make it aware to users that they need to
+// use ansicolor <https://github.com/xpl/ansicolor>
+if (isBrowser)
+  stdoutColor = {
+    level: 3,
+    hasBasic: true,
+    has256: true,
+    has16m: true
+  };
 
 const template = require('./templates.js');
 
@@ -239,9 +245,6 @@ function applyStyle(...args) {
   // Reset the original `dim` if we changed it to
   // work around the Windows dimmed gray issue
   ansiStyles.dim.open = originalDim;
-
-  // If we're in a browser then return HTML
-  if (isBrowser) str = ansiHTML(str);
 
   return str;
 }
